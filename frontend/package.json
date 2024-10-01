@@ -1,0 +1,20 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "The frontend for my personal API project which implements a REST API for exchanging data between frontend and backend, as well as uploading to and querying from a Mongo database.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "frontend",
+    "API",
+    "REST",
+    "Vite",
+    "MongoDB"
+  ],
+  "author": "Keagan",
+  "license": "MIT",
+  "dependencies": {
+    "vite": "^5.4.8"
+  }
+}
