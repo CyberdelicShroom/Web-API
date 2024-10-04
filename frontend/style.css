@@ -1,0 +1,59 @@
+/* Set the background color of the entire body */
+body {
+    background-color: #2e2e2e; /* Dark gray */
+    font-family: Arial, sans-serif;
+    color: white; /* Text color for better contrast */
+    margin: 0;
+    padding: 0;
+}
+
+/* Set the background color and style of paragraph elements */
+p {
+    background-color: #2596be;
+    padding: 15px;
+    border-radius: 5px;
+    color: black; /* Text color for contrast against the cyan background */
+    margin: 20px 0;
+}
+
+/* Add some basic spacing and font adjustments */
+h1, h2, h3 {
+    color: #ffffff;
+    margin: 10px 0;
+}
+
+a {
+    color: #2596be;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Style for input fields */
+input[type="text"], caption {
+    background-color: #A0D8F1;
+    border: 1px solid #2e2e2e;
+    color: #2e2e2e; /* Dark text for contrast */
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+    width: 25%; /* Adjust width as needed */
+    box-sizing: border-box;
+}
+
+/* Style for buttons */
+button {
+    background-color: #A0D8F1;
+    border: none;
+    color: #2e2e2e; /* Dark text */
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #88c4e6; /* Slightly darker shade on hover */
+}

@@ -28,7 +28,7 @@ async function createChart() {
         data: {
         labels: data.x_years,
         datasets: [{
-            label: 'Combined Land-Surface Air and Sea-Surface Water Temperature Anomalies in °C',
+            label: 'Combined Land-Surface, Air, and Sea-Surface Water Temperature Anomalies in °C',
             data: data.y_temps,
             borderWidth: 1
         }]
