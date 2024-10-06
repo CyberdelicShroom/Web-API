@@ -28,7 +28,7 @@ app.get('/api', async (request, response) => {
 //post request - request to post data to server
 app.post('/api', async (request, response) => {
     const timestamp = Date.now();
-    const dateString = new Date(timestamp).toLocaleString();
+    // const dateString = new Date(timestamp).toLocaleString();
     //retrieving the body of the data that was sent from the client
     const {caption, image64, coords} = request.body;
     
@@ -40,7 +40,7 @@ app.post('/api', async (request, response) => {
     const postData = {
         caption: caption,
         image: imgPath,
-        timestamp: dateString,
+        timestamp: timestamp,
         coords: coordsArray
     };
     console.log("Post data:",postData);

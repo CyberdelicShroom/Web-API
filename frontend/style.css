@@ -57,3 +57,19 @@ button {
 button:hover {
     background-color: #88c4e6; /* Slightly darker shade on hover */
 }
+
+#sort {
+    background-color: #2596be;
+    border-radius: 5px;
+    color: black;
+    margin: 20px 0;
+    width: 12%;
+}
+
+#time {
+    color: rgb(16, 70, 151);
+}
+
+#caption {
+    color: rgb(16, 70, 151);
+}
