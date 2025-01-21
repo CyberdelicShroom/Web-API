@@ -19,27 +19,22 @@ function setup(){
     }
     getCoords();
     document.getElementById('submit').onclick = async () => {
-        if ('geolocation' in navigator) {
-            console.log("Geolocation available");
-            video.loadPixels();
-            const image64 = video.canvas.toDataURL();
-            const caption = document.getElementById('caption').value;
-            const data = {caption, image64, coords};
-            postData();
-            async function postData() {
-                const options = {
-                    method: 'POST',
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(data),
-                };
-                const response = await fetch('/api', options);
-                const dataFromServer = await response.json();
-                console.log("From server:", dataFromServer);
-            }
-        } else {
-            console.log("Geolocation is not available");
+        video.loadPixels();
+        const image64 = video.canvas.toDataURL();
+        const caption = document.getElementById('caption').value;
+        const data = {caption, image64, coords};
+        postData();
+        async function postData() {
+            const options = {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            };
+            const response = await fetch('/api', options);
+            const dataFromServer = await response.json();
+            console.log("From server:", dataFromServer);
         }
     }
 }
