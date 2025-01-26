@@ -38,7 +38,30 @@ async function getData(){
             const coords = document.createElement('div');
             const date = document.createElement('div');
             const image = document.createElement('img');
+            const btn = document.createElement("button");
+            const post = document.createElement("div");
+            post.className = "image-container";
+            const img_id = item._id;
+            
+            btn.innerHTML = 'Delete Post';
+            btn.className = "button";
+            btn.onclick = async function(){
+              const confirmation = window?.confirm("Are you sure you want to delete this post?");
+              if(confirmation){
+                const options = {
+                  method: 'DELETE',
+                  headers: {
+                      'Content-Type': 'application/json;charset=utf-8'
+                  },
+                };
+                const response = await fetch(`/api/delpost/${img_id}`, options);
+                const data = await response.text();
+                // alert(data);
+                window.location.reload();
+              }
+            };
 
+            post.append(image, btn);
             caption.textContent = `Caption: ${item.caption}`;
             const timestamp = +item.timestamp;
             const dateString = new Date(timestamp).toLocaleString();
@@ -51,7 +74,8 @@ async function getData(){
             image.src = imgSrc;
             image.alt = imgSrc;
 
-            root.append(caption, coords, date, image);
+            // root.append(caption, coords, date, image, btn);
+            root.append(caption, coords, date, post);
             logs.push({ elt: root, timestamp: timestamp, caption: item.caption });
             document.body.append(root);
         }

@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const connectDB = require('./connectMongoDB');
 const fs = require('fs');
 require('dotenv').config();
+const router = express.Router()
 
 const app = express();
 app.use(cors({ origin: '*' }));
@@ -18,6 +19,18 @@ mongoose.connection.once('open', () => {
     app.listen(port, () => console.log(`Server running on port ${port}`));
 });
 
+app.delete('/api/delpost/:id', async (req, res) => {
+    let id = req.params.id;
+    const post = await Post.findById(id);
+    if (!post) {
+        res.status(400)
+        throw new Error('Post not found')
+    }
+    await post.deleteOne();
+
+    res.status(200).json(`Post with id '${id}' has been deleted.`);
+
+});
 
 //get request - server/database query
 app.get('/api', async (request, response) => {
@@ -43,7 +56,8 @@ app.post('/api', async (request, response) => {
         timestamp: timestamp,
         coords: coordsArray
     };
-    console.log("Post data:",postData);
+    
+    // console.log("Post data:",postData);
     const post = await Post.create(postData);
 
     console.log("Data posted to database from client: \n");

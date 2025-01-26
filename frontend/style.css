@@ -16,6 +16,18 @@ p {
     margin: 20px 0;
 }
 
+.image-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.image-container img {
+    max-width: 25%;
+    height: auto;
+    border-radius: 5px;
+}
+
 /* Add some basic spacing and font adjustments */
 h1, h2, h3 {
     color: #ffffff;
@@ -52,6 +64,7 @@ button {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    max-width: 150px;
 }
 
 button:hover {
